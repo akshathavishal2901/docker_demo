@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = "akshatha29/app-image"
     }
 
-//    stages {
+ stages {
 
   //      stage('Clone Repository') {
     //        steps {
