@@ -5,13 +5,13 @@ pipeline {
         DOCKER_IMAGE = "akshatha29/app-image"
     }
 
-    stages {
+//    stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/akshathavishal2901/docker_demo.git'
-            }
-        }
+  //      stage('Clone Repository') {
+    //        steps {
+      //          git 'https://github.com/akshathavishal2901/docker_demo.git'
+        //    }
+        //}
 
         stage('Build Docker Image') {
             steps {
@@ -28,7 +28,7 @@ pipeline {
                     usernameVariable: 'DOCKER_USER',
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
-                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+                    bat 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                 }
             }
         }
